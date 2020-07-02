@@ -1,0 +1,20 @@
+# Gravity Calculator
+# Murat Celik
+# b21827263
+# First İnteger falling Time
+# Second İnteger initial Position
+# Third İnteger initial Velocity
+0 read r1 # fallingTime = r1
+1 jltzn r1 0 # if time < 0, go to r1
+2 read r2 # initial Position = r2
+3 read r3 # initial Velocity = r3
+4 setn r4 , -10 # gravity 
+5 setn r5 , 2
+6 mul r7 ,r1 ,r1
+7 mul r7 ,r7 ,r4
+8 div r7 ,r7 ,r5 
+9 mul r8 ,r3 ,r1 # initial Velocity * falling Time
+10 add r6 ,r7 ,r8
+11 add r6 ,r6 ,r2
+12 write r6
+13 halt
