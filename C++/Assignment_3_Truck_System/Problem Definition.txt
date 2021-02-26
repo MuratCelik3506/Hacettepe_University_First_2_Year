@@ -1,0 +1,34 @@
+Problem Definition
+Scenario
+You are expected to complete missions according to input files and produce an output file. The
+information about cities is in the text file which is dests.txt. In this file, you are given several cities
+as possible destination points for your simulations. In each city you are given, there exists a cargo
+station. In a station, there are cargo packages to be delivered to destinations and cargo trucks
+to transport these cargo packages. In our scenario, cargo packages are picked up and dropped off
+according to the stack principle which is last-in-first-out. The initial status of cargo packages in
+each city is given in packages.txt. A cargo truck garage keeps the cargo trucks in the station. In
+our scenario, cargo truck garages are modeled as queue principle which is first-in-first-out. When
+asked for a truck, they should retrieve the first truck inside the garage. The initial configuration
+of truck garages in each city is given in trucks.txt. The cargo truck and the packages it carries
+are modeled as a double-linked list. Keep in mind that cargo truck class extends packages class.
+Therefore, you will have doubly linked lists of packages as your carriage. The missions are given
+in mission.txt.
+A misson has the following format: A-B-C-x-y-z1,z2,...
+• A: Starting station
+• B: Midway station
+Page 2 of 7
+Fall 2020
+BBM 203: Data Structures Lab.
+• C: Target station
+• x: Number of cargo packages you take from the starting station
+• y: Number of cargo packages you take from the midway station
+• z: Indices of cargo packages you must leave at the midway station. Indices start from 0.
+A complete mission requires you to complete the following procedure:
+1. Assemble a cargo truck at the starting city, A. Since a cargo truck is modeled as a doubly
+linked list of cargo packages, you need to start with the first truck you have in the truck
+garage and insert it into the head of your list. Afterwards, you need to insert x packages at
+city A to this list.
+2. Append y packages from the midway station, B, to your list.
+3. Leave packages z1, z2... at midway station.
+4. When disbanding the cargo packages, put the truck into the truck garage and packages at
+C.
